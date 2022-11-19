@@ -14,10 +14,8 @@ jobs:
         
       - name: Install dependencies
         run: |
-          pwd
-          ls -t
           python -m pip install --upgrade pip
-          python -m pip install -r requirements.txt;
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
       - name: Deploying to Heroku
         env:
