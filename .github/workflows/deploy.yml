@@ -19,6 +19,9 @@ jobs:
 
 
       - name: Heroku login credentials
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
         run: |
           cat > ~/.netrc <<EOF
             machine api.heroku.com
